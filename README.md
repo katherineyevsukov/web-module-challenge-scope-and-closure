@@ -45,7 +45,7 @@ Edit the `ReadMe` file with your answers.
 1. In your own words, define closure (1-2 sentences).
 
   Closure is the ability of a function to access information within it's lexical scope. Closure happens when a function "reaches up" for a variable value it needs to use. 
-  
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -67,8 +67,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  Closure is used within the return function when 'name' is called for. 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+ The name "Dan" will always be the same, while the newRoll may change
 c. What is the lexical scope of `newRoll`? 
+The lexical scope of newRoll would only be inside of the return function within personalDice. If it is called outside of the function, it would cause an error "not defined."
 
 
 ### Task 3 - Stretch Goals
