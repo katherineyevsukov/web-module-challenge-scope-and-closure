@@ -28,9 +28,9 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+    The lexical scope of the variable "count" is only within the function in counter1, while it is in the global scope in counter2.
   2. Which of the two uses a closure? How can you tell?
-  
+    
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
 */
@@ -82,12 +82,18 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(){
-  // for (let i = 0 ; i < number ; i++){
-
-  // }
+function finalScore(inningCB, number){
+  const teamScores = {
+    Home: 0,
+    Away: 0
+  } 
+  for (let i = 0 ; i < number ; i++){
+    teamScores.Home = teamScores.Home + inningCB()
+    teamScores.Away = teamScores.Away + inningCB()
+  } return teamScores;
 }
 
+console.log('task 3', finalScore(inning, 9))
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
