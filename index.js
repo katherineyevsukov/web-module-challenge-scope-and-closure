@@ -30,9 +30,9 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   1. What is the difference between counter1 and counter2?
     The lexical scope of the variable "count" is only within the function in counter1, while it is in the global scope in counter2.
   2. Which of the two uses a closure? How can you tell?
-    
+     They both are using a closure. counter1 is using a closure within it's return function when it accesses count from it's parent function. counter2 is using a closure when it accesses count from the global scope.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?  counter2 would be useful if we wanted the value of count to be remembered and updated throughout various functions. counter1 would be better if count only needed to be used within one function.
 */
 
 // counter1 code
